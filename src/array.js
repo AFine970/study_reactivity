@@ -4,6 +4,7 @@
 import {def} from './utils'
 
 const arrayPrototype = Array.prototype
+// 以Array.prototype为原型创建arrayMethod, 并暴露
 export const arrayMethods = Object.create(arrayPrototype)
 
 // 需要改写的7个方法
@@ -41,16 +42,14 @@ methodsNeedChange.forEach(method => {
             case 'splice':
                 inserted = args.slice(2)
                 break
-            default:
-                break
         }
 
         // 判断有没有插入的项
         if (inserted) {
             ob.observeArray(inserted)
         }
-        
-        console.log('啦啦啦')
+
+        ob.dep.notify()
         
         return result
     }, false)

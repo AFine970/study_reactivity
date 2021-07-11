@@ -5,16 +5,19 @@ import {def} from './utils'
 import defineReactive from './defineReactive'
 import {arrayMethods} from './array'
 import observe from './observe'
-
+import Dep from './Dep'
 export default class Observer {
     constructor(value) {
+        // console.log('进入构造器', value)
+        // 每一个Observer实例都有一个Dep实例
+        this.dep = new Dep()
+        // 给实例（this，一定要注意，构造函数中的this不是表示类本身，而是表示实例）添加了__ob__属性，值是这次new的实例
         def(value, '__ob__', this, false)
-        console.log('进入构造器', value)
-        
         // 判断是不是数组
         if (Array.isArray(value)) {
             // 改变value数组的原型, 指向arrayMethods
             Object.setPrototypeOf(value, arrayMethods)
+            
             this.observeArray(value)
         } else {
             this.walk(value)

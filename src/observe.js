@@ -8,7 +8,7 @@ export default function observe(value) {
     // 只处理对象
     if (typeof value !== 'object') return
     // 定义ob
-    let ob = null
+    let ob = undefined
     if (typeof value.__ob__ !== 'undefined') {
         ob = value.__ob__
     } else {
