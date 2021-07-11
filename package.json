@@ -1,0 +1,19 @@
+{
+  "name": "study_reactivity",
+  "version": "1.0.0",
+  "description": "深入响应式原理学习",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack-dev-server"
+  },
+  "keywords": [
+    "Vue"
+  ],
+  "author": "cunhang_wwei",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
