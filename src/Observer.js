@@ -32,7 +32,7 @@ export default class Observer {
             }
         }
     }
-
+    
     // 遍历数组的每一项进行observe
     observeArray(value) {
         for (let index = 0, len = value.length; index < len; index++) {

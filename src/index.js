@@ -12,14 +12,14 @@ let obj = {
     c: {
         d: {
             e: {
-                f:666
+                f: 6666
             }
         }
-    }, 
+    },
     g: [22, 33, 44, 55]
 }
 
-// observe(obj)
+observe(obj)
 
 // obj.g.push(66)
 // console.log('g', obj.g);
@@ -27,15 +27,14 @@ let obj = {
 // obj.g.unshift(66)
 // console.log('g', obj.g);
 
-// obj.g.splice(2, 1, 88, 99)
+obj.g.splice(2, 1, 88, 99)
 // console.log('g', obj.g);
 
 // obj.g = 66
 // console.log('g', obj.g);
 
-observe(obj)
 new Watch(obj, 'a.m.n', (value) => {
     console.log('☆☆☆☆☆', value)
 })
-// obj.a.m.n = 88
-// console.log(obj)
+obj.a.m.n = 88
+console.log(obj)

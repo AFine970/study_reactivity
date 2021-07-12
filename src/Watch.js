@@ -54,9 +54,10 @@ function parsePath(expression) {
         if (!obj) return
         for (let index = 0; index < keys.length; index++) {
             const key = keys[index]
-            if (obj[key]) {
-                obj = obj[key]
-            }
+            // 注意！这里不能加判断，否则多触发一次getter
+            // if (obj[key]) {
+            obj = obj[key]
+            // }
         }
         return obj
     }
