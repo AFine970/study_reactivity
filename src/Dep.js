@@ -10,7 +10,10 @@ export default class Dep {
 
     // 收集订阅
     addSub(sub) {
-        this.subs.push(sub)
+        if (!this.subs.find(item => item.id === sub.id)) {
+            console.log('添加订阅')
+            this.subs.push(sub)
+        }
     }
 
     // 添加依赖
